@@ -17,7 +17,6 @@ Welcome to the repository for our cutting-edge Audio and Video Conferencing Plat
 - **Socket.io**: For real-time communication.
 - **WebRTC**: For peer-to-peer audio/video streaming.
 - **Express**: Web application framework.
-- **Bootstrap**: Front-end framework for responsive design.
 
 ## Setup Instructions
 
