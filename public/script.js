@@ -3,15 +3,15 @@ const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   path: '/peerjs',
   host: '/',
-  port: '443'
+  port: '3030'
 })
 let myVideoStream;
 const myVideo = document.createElement('video')
-myVideo.muted = true;
+myVideo.muted = false;
 const peers = {}
 navigator.mediaDevices.getUserMedia({
   video: true,
-  audio: true
+  audio: false
 }).then(stream => {
   myVideoStream = stream;
   addVideoStream(myVideo, stream)
@@ -103,32 +103,32 @@ const playStop = () => {
 
 const setMuteButton = () => {
   const html = `
-    <i class="fas fa-microphone"></i>
-    <span>Mute</span>
-  `
+      <i class="fas fa-microphone"></i>
+      <span>Mute</span>
+    `
   document.querySelector('.main__mute_button').innerHTML = html;
 }
 
 const setUnmuteButton = () => {
   const html = `
-    <i class="unmute fas fa-microphone-slash"></i>
-    <span>Unmute</span>
-  `
+      <i class="unmute fas fa-microphone-slash"></i>
+      <span>Unmute</span>
+    `
   document.querySelector('.main__mute_button').innerHTML = html;
 }
 
 const setStopVideo = () => {
   const html = `
-    <i class="fas fa-video"></i>
-    <span>Stop Video</span>
-  `
+      <i class="fas fa-video"></i>
+      <span>Stop Video</span>
+    `
   document.querySelector('.main__video_button').innerHTML = html;
 }
 
 const setPlayVideo = () => {
   const html = `
-  <i class="stop fas fa-video-slash"></i>
-    <span>Play Video</span>
-  `
+    <i class="stop fas fa-video-slash"></i>
+      <span>Play Video</span>
+    `
   document.querySelector('.main__video_button').innerHTML = html;
 }
